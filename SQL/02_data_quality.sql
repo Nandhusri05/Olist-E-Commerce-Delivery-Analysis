@@ -716,7 +716,7 @@ These records were retained and flagged for awareness.
 */
 
 
--- Check estimated delivery before purchase
+-- Check Estimated Delivery Before Purchase
 
 SELECT 
      COUNT(*) AS invalid_orders
