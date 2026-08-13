@@ -21,8 +21,7 @@ The objective of this project is to understand:
 - Which product categories have high delivery times or freight costs
 - Which sellers perform strongly or poorly based on customer ratings
 - How sales and revenue are distributed across categories
-- Where the business has opportunities to improve customer retention
-  and operations
+- Where the business has opportunities to improve repeat-purchase behavior
 
 **Workflow:** Data Preparation → Data Quality Validation → SQL Analysis
 → Python Analysis → Power BI Dashboard → Business Insights &
@@ -41,9 +40,10 @@ Recommendations
     satisfaction?
 6.  How do freight costs and order values vary across products and
     locations?
-7.  What factors are associated with negative customer reviews?
+7.  Which delivery, product, and seller characteristics are associated
+    with lower customer review scores?
 8.  How concentrated are sales across product categories?
-9.  How strong is customer retention and repeat-purchase behavior?
+9.  How common are repeat purchases among customers?
 
 ---
 
@@ -53,21 +53,16 @@ The project uses the **Brazilian Olist e-commerce dataset**.
 
 ### Tables Used
 
-Table Rows
-
----
-
-Customers 99,441
-Orders 99,441
-Order Items 112,650
-Payments 103,886
-Products 32,340
-Reviews 99,223
-Sellers 3,095
-Geolocation 1,000,163
-
-The raw CSV files were imported into a MySQL database named
-`olist_ecommerce`.
+| Table       |      Rows |
+| ----------- | --------: |
+| Customers   |    99,441 |
+| Orders      |    99,441 |
+| Order Items |   112,650 |
+| Payments    |   103,886 |
+| Products    |    32,340 |
+| Reviews     |    99,223 |
+| Sellers     |     3,095 |
+| Geolocation | 1,000,163 |
 
 ---
 
@@ -167,7 +162,7 @@ The final Power BI report contains three analytical pages.
 
 ---
 
-# Power BI Dashboard
+## Power BI Dashboard
 
 ## Page 1 --- Olist E-Commerce Overview
 
@@ -220,7 +215,7 @@ Focuses on customer experience and seller-level performance.
 ### Main KPIs
 
 - Average Review Score
-- Average Seller Rating
+- Average Seller Review Score
 - Total Sellers
 
 ### Visuals
@@ -231,8 +226,7 @@ Focuses on customer experience and seller-level performance.
 - Seller Rating Distribution
 - Seller Performance Matrix
 
-![Olist Customer & Seller
-Performance](Images/Olist%20Customer%20%26%20Seller%20Performance.png)
+![Olist Customer & Seller Performance](Images/Olist%20Customer%20%26%20Seller%20Performance.png)
 
 ---
 
@@ -265,8 +259,8 @@ Performance](Images/Olist%20Customer%20%26%20Seller%20Performance.png)
 - The average customer review score is **4.09 / 5**.
 - **5-star reviews are the most common**, followed by 4-star reviews.
 - The dashboard compares review scores across on-time and late
-  deliveries, highlighting delivery experience as an important
-  customer-experience dimension.
+  deliveries, showing how delivery performance is associated with
+  customer experience.
 - The customer base is heavily weighted toward one-time purchasers:
   the analysis identified **93,099 single-purchase customers versus
   2,997 repeat customers**.
@@ -327,7 +321,7 @@ customer-experience implication.
 - Track regional delivery bottlenecks
 - Improve estimated delivery-date accuracy
 
-### 3. Improve customer retention
+### 3. Increase repeat purchases
 
 The analysis shows a large gap between single-purchase and repeat
 customers.
@@ -335,7 +329,7 @@ customers.
 - Introduce loyalty initiatives
 - Use personalized post-purchase communication
 - Recommend related products
-- Develop targeted retention campaigns
+- Develop targeted repeat-purchase campaigns
 
 ### 4. Optimize high-freight products
 
